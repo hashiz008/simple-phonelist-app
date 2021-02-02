@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+   <p><%= flash[:notice] %></p>
+<% end %>
+
+<% @members.each do |member| %>
+  <p><%= link_to member.name, edit_member_path(member.id) %></p>
+  <p><%= member.yomi %></p>
+  <p><%= member.phone %></p>
+<% end %>
+
+<%= link_to "新規登録", new_member_path %>
